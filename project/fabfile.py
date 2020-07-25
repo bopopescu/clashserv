@@ -34,8 +34,8 @@ def development():
     home_dir = '/home/han'
     
     db_values = {
-        'db_master_user':'genghisu',
-        'db_master_password':'arcamdarien1234',
+        'db_main_user':'genghisu',
+        'db_main_password':'arcamdarien1234',
         'db_user': 'lottserv',
         'db_pass': 'lottserv',
         'db_name': 'lottserv',
@@ -152,7 +152,7 @@ def git_update():
     """
     update the site via git
     """
-    run('cd %s && git pull origin master' %(project_dir))
+    run('cd %s && git pull origin main' %(project_dir))
     run('cd %s && bin/buildout' %(project_dir))
     upload_template(settings_file,
                     '%s/project/local_settings.py' %(project_dir), db_values)
